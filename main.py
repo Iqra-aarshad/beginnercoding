@@ -1,13 +1,16 @@
+#exercise 1
 #using a for loop to print number from 1 to 10
 for num in range(1,11):
     print(num)
 
+#exercise 2
 #get input from user 
 number = int(input("enter a number:"))
 #use a loop to print a multiplication table
 for i in range(1,11):
     print(f"{number}x{i} = {number*i}")
     
+#exercise 3
 #get the number from user
 num = int(input("enter a number:"))
 #intialize variables
@@ -18,6 +21,8 @@ while num > 0:
     num-=1
 #print the sum
     print("the sum of natural number upto",num,"is", sum)
+    
+#exercise 4
 #define a list of names
 names = ["iqra", "urwa", "dua", "aisha"]
 #use for loop to iterate through each name in list
@@ -25,6 +30,7 @@ for name in names:
 #print each name
     print(name)
 
+#exercise 5
 #get user input for the number
 number = int(input("enter a number:"))
 
@@ -39,6 +45,8 @@ while current <= number:
 
 #print the factorial
 print("the factorial of",number, "is:", factorial)
+
+#exercise 6
 #get the number of terms from user 
 terms = int(input("enter the number of terms:"))
 #intialize first two terms
@@ -49,7 +57,9 @@ for i in range(terms):
     print(first_term,end="")
     temp = first_term + second_term
     first_term = second_termsecond_term = temp
-#get the number from user 
+    
+#exercise 7
+#get the nmber from user 
 number = int(input("enter a number:"))
 #initialize variables 
 reversed_number = 0
@@ -61,6 +71,7 @@ while number > 0:
 #print the reversed number
 print("reversed number:", reversed_number)
 
+#exercise 8
 #get the string from user 
 string = input("enter a string:")
 #initialize the vowel
@@ -71,6 +82,8 @@ for char in string:
      vowel_count += 1
 #print the vowel count
     print("number of vowels:", vowel_count)
+    
+#exercise 9
 #get the number from user
 number = int(input("enter a number:"))
 #store a copy of number
@@ -86,6 +99,7 @@ while number > 0:
     else:
         print("the number is not a palidrome.")
 
+#exercise 10
 #initialize the sum variables
 sum_of_squares = 0
 #iterate through the numbers from 1 to 5 using for loop
