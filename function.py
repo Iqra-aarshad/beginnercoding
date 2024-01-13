@@ -101,24 +101,27 @@ estimated_cost = estimate_travel_cost(destination, travel_style, duration)
 print("The estimated travel cost for a", duration, "day", travel_style, "trip to", destination, "is $", estimated_cost)
 
 #Restaurant Bill calculator
-def calculate_total_bill(items, quantities, prices, discount_rate=0, tax_rate=0, split_friends=1):
-    if len(items) != len(quantities) or len(quantities) != len(prices):
-        return "Error: Mismatched input lengths."
+def calculate_total_bill(items, quantities, prices, discount=0, tax=0, num_friends=1):
+    total_amount = 0
+    for i in range(len(items)):
+        item_total = quantities[i] * prices[i]
+        total_amount += item_total
 
-    total_cost = sum(quantities[i] * prices[i] for i in range(len(items)))
+    total_amount -= discount  
+    total_amount += total_amount * tax  
+
+    if num_friends > 1:
+        total_amount /= num_friends 
 
 
-    total_cost -= total_cost * (discount_rate / 100)
+    return total_amount
 
+items = ["Item 1", "Item 2", "Item 3"]
+quantities = [2, 3, 1]
+prices = [10, 15, 5]
+discount = 5
+tax = 0.1
+num_friends = 2
 
-    total_cost += total_cost * (tax_rate / 100)
-    total_cost /= split_friends
-
-    return total_cost
-
-items = ["item1","item2","item3"]
-quantities = [3,2,1]
-prices = [2.0,8.0,7.0]
-
-total_bill = calculate_total_bill(items, quantities, prices, discount_rate=10, tax_rate=5, split_friends=3)
-print(f"Total Bill: ${total_bill:.2f}")
+total_bill = calculate_total_bill(items, quantities, prices, discount, tax, num_friends)
+print("The total bill amount is: $", total_bill)
